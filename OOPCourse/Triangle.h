@@ -7,7 +7,7 @@
 
 namespace KHAS {
 
-	class Triangle
+	class Triangle : public Point
 	{
 	private:
 
@@ -16,6 +16,8 @@ namespace KHAS {
 
 	public:
 		Triangle() = delete;
+
+		Triangle(const RECT& rect);
 
 		Triangle(const RECT& rect
 			, const Point& first_point
@@ -27,8 +29,7 @@ namespace KHAS {
 			, int distance_from_center_to_top_beam
 			, int height
 			, const COLORREF& color
-			, int angle
-		);
+			, int angle);
 
 
 		const Point& getFirstPoint() const;
@@ -40,9 +41,9 @@ namespace KHAS {
 		void setSecondPoint(const Point& value);
 		void setThirdPoint(const Point& value);
 
-		void draw(const HDC& hdc) const;
-		void move(MoveDirection md);
-		void moveRandom();
+		virtual void draw(const HDC& hdc) const override;
+		virtual void move(MoveDirection md)		override;
+		virtual void moveRandom()				override;
 
 		friend Triangle operator += (Triangle& lhs, const POINT& rhs);
 		friend Triangle operator -= (Triangle& lhs, const POINT& rhs);

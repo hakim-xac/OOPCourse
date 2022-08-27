@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Enums.h" />
+    <ClInclude Include="Figure.h" />
     <ClInclude Include="Funcions.h" />
     <ClInclude Include="GUIInterface.h" />
     <ClInclude Include="GUIInterface.hpp" />
