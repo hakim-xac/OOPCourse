@@ -22,21 +22,5 @@ namespace KHAS {
             }
             return ret;
         }
-
-        double toAngelSin(int old_angle)
-        {
-            auto angel{ old_angle };
-            if (angel < 0) angel = 360 - angel;
-            if (angel > 360) angel -= 360;
-            return sin(angel);
-        }
-
-        double toAngelCos(int old_angle)
-        {
-            auto angel{ old_angle };
-            if (angel < 0) angel += 360;
-            if (angel > 360) angel -= 360;
-            return sin(angel);
-        }
     }
 }

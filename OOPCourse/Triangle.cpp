@@ -6,8 +6,16 @@
 
 namespace KHAS {
 
+    Triangle::Triangle(const RECT& rect)
+        : Point(rect)
+        , points_()
+        , max_rect_()
+    {
+    }
+
     Triangle::Triangle(const RECT& rect, const Point& first_point, const Point& second_point, const Point& thirs_point)
-        : points_()
+        : Point(rect, first_point.getX(), first_point.getY(), first_point.getColor())
+        , points_()
         , max_rect_(rect)
     {
         points_.reserve(3);
@@ -23,7 +31,8 @@ namespace KHAS {
         , int height
         , const COLORREF& color
         , int angle)
-        : points_()
+        : Point(rect, center_point.getX(), center_point.getY(), color)
+        , points_()
         , max_rect_(rect)
     {
         using namespace Functions;

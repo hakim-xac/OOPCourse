@@ -11,7 +11,8 @@ namespace KHAS {
 		, int distance_from_center_to_top_beam
 		, int beam_height
 		, const Point& center_point)
-		: rect_(rect)
+		: Triangle(rect)
+		, rect_(rect)
 		, center_(rect_, center_point, color, radius_sun)
 		, color_(color)
 		, rays_()

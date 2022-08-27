@@ -7,7 +7,7 @@
 #include "Circle.h"
 
 namespace KHAS {
-	class Sun
+	class Sun : public Triangle
 	{
 	private:
 		RECT rect_;
@@ -26,10 +26,10 @@ namespace KHAS {
 			, int beam_height
 			, const Point& center_point);
 
-		void draw(const HDC& hdc) const;
-		void move(MoveDirection md);
+		virtual void draw(const HDC& hdc) const override;
+		virtual void move(MoveDirection md) override;
+		virtual void moveRandom() override;
 		void toMove();
-		void moveRandom();
 	};
 }
 #endif
